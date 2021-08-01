@@ -374,5 +374,41 @@ footer {
 }
 
 
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .welcomeContentDetails {
+        flex-direction: column;
+    }
+  }
 
-@media screen and (max-width: 575px) {}
+  @media only screen and (max-width: 1304px) {
+    .welcomeImg {
+        background-size: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .welcomeContentDetails {
+        flex-direction: column;
+    }
+
+    .rightSection{
+        text-align: center;
+    }
+
+    .navbar .nav-list li a {
+        font-size: 14px;
+    }
+    .weatherDetails {
+        width: 50%;
+    }
+
+    .foot_tit{
+        font-size: 17px;
+    }
+    .innerfot_p {
+        font-size: 14px;
+    }
+
+  }

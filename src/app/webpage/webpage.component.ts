@@ -38,7 +38,6 @@ export class WebpageComponent implements OnInit {
       let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      // Display the result in the element with id="demo"
       this.timer = days.toString() + 'd ' + hours.toString() + 'h ' + minutes.toString() + 'm ' + seconds.toString() + 's';
       // If the count down is finished, write some text 
       if (distance < 0) {

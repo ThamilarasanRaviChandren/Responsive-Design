@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WebPageDataService } from './webpage.data.service';
 import { from, Observable } from "rxjs";
 import { wetherDetails } from "./webpage.model";
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-webpage',
   templateUrl: './webpage.component.html',
@@ -12,8 +13,20 @@ export class WebpageComponent implements OnInit {
   public timer: any;
   public wetherCountryWeather: any;
   public destinationRes: any;
+  registerForm: FormGroup;
+  submitted = false;
+  public nameRequire: boolean = false;
+  public contactRequire: boolean = false;
+  public emailRequire: boolean = false;
+  public succesMsg: boolean = false;
 
-  constructor(public webPageDataService: WebPageDataService) {
+
+  constructor(public webPageDataService: WebPageDataService, private formBuilder: FormBuilder) {
+    this.registerForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      contacttNo: ['', [Validators.required, Validators.minLength(10)]]
+    });
 
   }
 
@@ -63,6 +76,36 @@ export class WebpageComponent implements OnInit {
     }, error => {
       this.webPageDataService.handleOnLoadError(error);
     });
+  }
+
+
+  onSubmit(): void {
+    this.submitted = true;
+    if (this.registerForm.value.firstName) {
+      this.nameRequire = false;
+    }
+    else {
+      this.nameRequire = true;
+    }
+    let pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (this.registerForm.value.email.match(pattern)) {
+      this.emailRequire = false;
+    }
+    else {
+      this.emailRequire = true;
+    }
+
+    if (this.registerForm.value.contacttNo.toString().length === 10) {
+      this.contactRequire = false;
+    }
+    else {
+      this.contactRequire = true;
+    }
+
+    if (!this.emailRequire && !this.contactRequire && !this.emailRequire) {
+      this.succesMsg = true;
+    }
+
   }
 
 }

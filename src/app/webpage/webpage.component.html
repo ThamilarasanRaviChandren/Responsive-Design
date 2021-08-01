@@ -85,31 +85,37 @@
             Travelling as group? Get a Quote
         </div>
         <div class="form">
-            <div class="formWraper">
-                <label>First Name</label>
-                <input id="username" name="username" class="required" tabindex="1" accesskey="u" type="text" value=""
-                    size="25" autocomplete="false">
-                <p class="u_error" id="u_error">Name is required</p>
-            </div>
-            <div class="formWraper">
-                <label>Contact Number</label>
-                <input id="username" name="username" class="required" tabindex="1" accesskey="u" type="text" value=""
-                    size="25" autocomplete="false">
-                <p class="u_error" id="u_error">Contact No is required</p>
-            </div>
-            <div class="formWraper">
-                <label>Email</label>
-                <input id="username" name="username" class="required" tabindex="1" accesskey="u" type="text" value=""
-                    size="25" autocomplete="false">
-                <p class="u_error" id="u_error">Email is required</p>
-            </div>
+            <form [formGroup]="registerForm">
+                <div class="formWraper form-group">
+                    <label>Your Name</label>
+                    <input formControlName="firstName" id="username" name="username" class="form-control required"
+                        tabindex="1" accesskey="u" type="text" value="" size="25" autocomplete="false">
+                    <p *ngIf="nameRequire" class="u_error" id="u_error">Name is required</p>
+                </div>
+                <div class="formWraper  form-group">
+                    <label>Contact Number</label>
+                    <input id="contacttNo" formControlName="contacttNo" name="contacttNo" class="required form-control"
+                        tabindex="1" accesskey="u" type="number" value="" size="25" autocomplete="false">
+                    <p *ngIf="contactRequire" class="u_error" id="u_error">Contact No is required</p>
+                </div>
+                <div class="formWraper  form-group">
+                    <label>Email</label>
+                    <input id="email" formControlName="email" name="email" class="form-control required" tabindex="1"
+                        accesskey="u" type="email" value="" size="25" autocomplete="false">
+                    <p *ngIf="emailRequire" class="u_error" id="u_error">Email is required</p>
+                </div>
 
-            <div class="buttonWraper">
-                <button class="CommonBtn themeColor colorWhite" type="button">
-                    SUBMIT
-                </button>
-            </div>
+                <div *ngIf="succesMsg" class="succesMsg">
+                    We hear you! We will get back to you for planning your vacation.
+                </div>
 
+                <div class="buttonWraper form-group">
+                    <!-- <input type="submit" value="Submit"> -->
+                    <button class="CommonBtn themeColor colorWhite" (click)="onSubmit()" type="button">
+                        SUBMIT
+                    </button>
+                </div>
+            </form>
         </div>
     </section>
 

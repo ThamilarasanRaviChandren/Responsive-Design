@@ -246,7 +246,7 @@ a:link {
 }
 
 .promoTxt {
-    margin-top: 28%;
+    margin-top: 32%;
     margin-left: 5%;
 }
 .promoBigTxt{
@@ -285,7 +285,7 @@ input.required {
     background: #fff!important;
     padding: 0;
     outline: none;
-    margin-bottom: 5px!important;
+    margin-bottom: 14px!important;
     font-size: 15px;
     color: #424242!important;
     margin-top: 10px;
@@ -302,7 +302,7 @@ input.required {
 }
 
 .buttonWraper {
-    width: inherit;
+    width: 215px;
     margin: auto;
 }
 
@@ -373,9 +373,16 @@ footer {
     cursor: pointer;
 }
 
+.succesMsg {
+    background-color: #79cf8e;
+    padding: 5px;
+    border: 1px solid;
+    margin-bottom: 20px;
+}
+
+
 
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
     .welcomeContentDetails {
         flex-direction: column;
     }
@@ -411,4 +418,16 @@ footer {
         font-size: 14px;
     }
 
+  }
+
+  @media only screen and (max-width: 768px) {
+    // for smaller screens
+    .innerWrapper{
+        flex-direction: column;
+        margin-left: 10%;
+    }
+
+    .buttonWraper {
+        margin: initial;
+    }
   }

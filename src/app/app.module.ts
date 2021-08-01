@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { WebpageComponent } from './webpage/webpage.component';
 import { WebPageDataService } from './webpage/webpage.data.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
+    ReactiveFormsModule
   ],
   providers: [WebPageDataService],
   bootstrap: [AppComponent]

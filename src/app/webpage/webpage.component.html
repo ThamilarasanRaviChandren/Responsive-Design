@@ -1,0 +1,166 @@
+<div class="allContainer">
+    <header class="headerSection colorWhite themeColor" role="banner">
+        <p class="headerTxt">
+            Book now to get exciting travel deals. Upto 40% o on credit card payments<br>
+            <span class="timerSection">Offers ends in {{timer}}</span>
+        </p>
+    </header>
+
+    <section class="navigationbar" role="navMenu">
+        <nav class="navbar background">
+            <ul class="nav-list">
+                <li><a href="#weather">Weather</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#quote">Get a Quote</a></li>
+            </ul>
+        </nav>
+
+    </section>
+
+    <section class="WelcomeContent" role="welcomeNotes">
+        <div class="welcomeContentDetails">
+            <div class="welcomeImg"></div>
+            <div class="rightSection">
+                <h2 class="lifeBoldTxt">Life is short <br>
+                    and the world is wide!</h2>
+                <p class="LifeParaTxt">
+                    Stay at the comfort of your homes and book a trip to travel<br>
+                    after the post pandemic era
+                </p>
+
+                <button class="CommonBtn themeColor colorWhite" type="button">
+                    PLAN A TRIP
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section  id="weather" class="weatherSection colorWhite">
+        <div class="weatherContent">
+            <div class="channerHeader themeColor">
+                THE WEATHER CHANNEL
+            </div>
+            <div class="channelList">
+                <div *ngFor="let weather of wetherCountryWeather" class="weatherDetails">
+                    <div class="countryName">
+                        {{weather.city}}
+                    </div>
+                    <div class="cloudImg"></div>
+                    <div class="degreetxt">
+                        {{weather.temp_Celsius}}<span>&#176;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="destinations" class="destinationSection">
+        <div class="destinationHeader">
+            THE WEATHER CHANNEL
+        </div>
+        <div class="allImages">
+            <div class="imgSection" *ngFor="let img of destinationRes">
+                <img class="countryImg" src="{{img.imageUrl}}" />
+                <div class="countryImgName">{{img.city}}</div>
+            </div>
+            <!-- <div class="imgSection">
+            <img class="countryImg"
+                src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80" />
+            <div class="countryImgName">London</div>
+        </div> -->
+        </div>
+
+
+    </section>
+    <section class="PromoContent">
+        <div class="promoTxt colorWhite">
+            <div class="promoBigTxt">
+                PLAN A TRIP
+            </div>
+            <div class="promoNormalTxt">
+                Make your vacation the most<br>
+                memorable one
+            </div>
+        </div>
+    </section>
+
+    <section id="quote" class="QuoteSection">
+        <div class="promoNormalTxt QuoteTxt">
+            Travelling as group? Get a Quote
+        </div>
+        <div class="form">
+            <div class="formWraper">
+                <label>First Name</label>
+                <input id="username" name="username" class="required" tabindex="1" accesskey="u" type="text" value=""
+                    size="25" autocomplete="false">
+                <p class="u_error" id="u_error">Name is required</p>
+            </div>
+            <div class="formWraper">
+                <label>Contact Number</label>
+                <input id="username" name="username" class="required" tabindex="1" accesskey="u" type="text" value=""
+                    size="25" autocomplete="false">
+                <p class="u_error" id="u_error">Contact No is required</p>
+            </div>
+            <div class="formWraper">
+                <label>Email</label>
+                <input id="username" name="username" class="required" tabindex="1" accesskey="u" type="text" value=""
+                    size="25" autocomplete="false">
+                <p class="u_error" id="u_error">Email is required</p>
+            </div>
+
+            <div class="buttonWraper">
+                <button class="CommonBtn themeColor colorWhite" type="button">
+                    SUBMIT
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="themeColor colorWhite">
+        <div class="row innerWrapper footer_part1">
+            <div class="footSection1">
+                <p class="foot_tit">TripZone</p>
+                <div class="footer_nav_close">
+                    <p class="innerfot_p"><a class="colorWhite" href="javascript:void(0)">About</a></p>
+                    <p class="innerfot_p"><a class="colorWhite" href="javascript:void(0)">Awards</a></p>
+                    <p class="innerfot_p"><a class="colorWhite" href="javascript:void(0)">Contact Us</a></p>
+                    <p class="innerfot_p"><a class="colorWhite" href="javascript:void(0)">Feedback</a></p>
+                </div>
+            </div>
+            <div class="footSection1">
+                <p class="foot_tit">Main Offices</p>
+                <div class="footer_nav_close">
+                    <p class="innerfot_p"><a class="colorWhite" href="javascript:void(0)">The United States</a></p>
+                    <p class="innerfot_p"><a class="colorWhite" href="javascript:void(0)">India</a></p>
+                    <p class="innerfot_p"><a class="colorWhite" href="javascript:void(0)">Brazil</a></p>
+                    <p class="innerfot_p"><a class="colorWhite" href="javascript:void(0)">Canada</a></p>
+                </div>
+            </div>
+            <div class="footSection1">
+                <p class="foot_tit">Sub Offices</p>
+                <div class="footer_nav_close">
+                    <p class="innerfot_p"><a class="colorWhite" href="javascript:void(0)">Australia</a></p>
+                    <p class="innerfot_p"><a class="colorWhite" href="javascript:void(0)">England</a></p>
+                    <p class="innerfot_p"><a class="colorWhite" href="javascript:void(0)">France</a></p>
+                    <p class="innerfot_p"><a class="colorWhite" href="javascript:void(0)">Germany</a></p>
+                </div>
+            </div>
+            <div class="footSection1">
+                <p class="foot_tit">Disclaimer</p>
+                <div class="footer_nav_close">
+                    <p class="innerfot_p">This layout is created as a pa of Sirius UI Recruitments.
+                        All the above content has no direct relation with Sirius
+                        business.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </footer>
+</div>
